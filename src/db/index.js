@@ -10,10 +10,11 @@ const connectDB= async()=>{
         )
         console.log(`\n MonogoDB connected sucessfully  !! DB Host:${connectionInstance.connection.host}`)
     } catch (error) {
-        console.log(`ERROR:${error}`)
+        console.log(`MONGODB FAILED connection : ${error}`)
         process.exit(1)
     }
 
-}
+}   
 
 export default connectDB
+
