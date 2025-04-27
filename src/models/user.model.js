@@ -61,7 +61,7 @@ const userSchema= new Schema(
 
 userSchema.pre('save', async function(next){                     //user kuch save krega to usse pehle ye hook lgega
     if(!this.isModified("password")) return next();             // agr password modify nahi hua h to next kardo . JAISE USER NE PHOTO UPDATE KI
-    this.password = await bcrypt.hash(this.password, 10)             // password ko hash kardo and SALTING KARDO then next call kardo  .. 
+    this.password = await bcrypt.hash(this.password, 10)             // password ko hash kardo and SALTING KARDO then next call kardo  ..  AND DB WLE PASSWORD M DALDO
     next()                                                    // since, ye ek type ka middleware h to next() call hoga
 })
 

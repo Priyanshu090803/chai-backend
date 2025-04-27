@@ -3,7 +3,7 @@ class ApiError extends Error{
         statusCode,
         message= "Something went wrong",
         errors=[],
-        statck= ""
+        stack= ""
     ){
         super(message)        // super wala apne parent class jisse extend hui ye class usme target karta h
         this.statusCode=statusCode
@@ -11,8 +11,8 @@ class ApiError extends Error{
         this.sucess=false        // ye dono to add hoke ayenge hi ayenge => mllb data null and sucess false hogi hi hogi hmesa kuki ye Api error hai
         this.errors= errors
 
-        if(statck){
-            this.stack = statck
+        if(stack){
+            this.stack = this.stack
         }
         else{
             Error.captureStackTrace(this , this.constructor)
@@ -23,3 +23,9 @@ class ApiError extends Error{
 }
 
 export {ApiError}
+
+
+
+
+
+

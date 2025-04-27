@@ -22,4 +22,13 @@ app.use(express.urlencoded({
 
 app.use(express.static("public"))      // ye static files, ya images apne server mai rakhne k kam ayega  , or public folder .
 
-app.use(cookieParser())
+
+// routes
+import userRouter from "./routes/user.route.js"
+app.use("/api/v1/users",userRouter)
+
+// this logic is for routing . jse hi /users type krega user , we will give control to userRouter like : register ,login etc
+// now our routing will look like this:> https//localhost:3000//api/v1/users/register or https//localhost:3000/api/v1/users/user/login etc
+// users k bad k route userRouter mai likhenge
+
+export {app}

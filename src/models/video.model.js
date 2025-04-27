@@ -38,6 +38,6 @@ const videoSchema =  new Schema({
     timestamps:true
 })
 
-videoSchema.plugin(mongooseAggregatePaginate)
+videoSchema.plugin(mongooseAggregatePaginate)  // AGGREGATION QUERIES M KAM ATI H 
 
 export const Video = mongoose.model("Video",videoSchema)         // Video > refrecnce jaega 
